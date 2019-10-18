@@ -1,36 +1,44 @@
 <nav class="sidebar">
   <div class="sidebar-sticky">
-      
-    <a routerLink="/" class="logo d-flex justify-content-between align-items-center" href="#">
-      <img src="" alt="Gover">
-    </a>
+    <div class="logo-container">
+      <a routerLink="/" class="web-logo d-flex justify-content-between align-items-center" href="#">
+        <img src="" alt="Gover">
+      </a>
+      <a class="mobile-logo d-flex justify-content-between align-items-center" routerLink="/">
+        <img src="" alt="mobile logo">
+      </a>
+    </div>
     
     <ul class="nav flex-column">
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/">
-          Dashboard
+          <img src="" alt="">Dashboard
         </a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/properties">
-          Properties
+          <img src="" alt="">Properties
         </a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/inspections">
-          Inspections
+          <img src="" alt="">Inspections
         </a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/reports">
-          Reports
+          <img src="" alt="">Reports
         </a>
       </li>
     </ul>
 
-    <a class="profile d-flex justify-content-between align-items-center" routerLink="/profile">
-      <img src="" alt="Profile">
-    </a>
-
+    <div class="flex">
+      <a class="profile" routerLink="/profile">
+        <img src="" alt="Profile">
+      </a>
+      <a class="logout" routerLink="">
+        <p>Log out</p><img src="" alt="">
+      </a>
+    </div>
   </div>
 </nav>
