@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  
+  properties: Property[];
+
+  inspections: Inspection[];
+
+  reports: Report[];
 
   constructor() { }
 
