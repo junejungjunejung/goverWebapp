@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PropertiesComponent } from './properties/properties.component';
-import { InspectionsComponent } from './inspections/inspections.component';
-import { ReportsComponent } from './reports/reports.component';
-import { ReportsViewingComponent } from './reports-viewing/reports-viewing.component';
-import { ProfileComponent } from './profile/profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PropertiesComponent } from './components/properties/properties.component';
+import { InspectionsComponent } from './components/inspections/inspections.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { ReportsViewingComponent } from './components/reports-viewing/reports-viewing.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},

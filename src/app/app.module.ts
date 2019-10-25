@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { NavComponent } from './nav/nav.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PropertiesComponent } from './properties/properties.component';
-import { InspectionsComponent } from './inspections/inspections.component';
-import { ReportsComponent } from './reports/reports.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ReportsViewingComponent } from './reports-viewing/reports-viewing.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavComponent } from './components/nav/nav.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PropertiesComponent } from './components/properties/properties.component';
+import { InspectionsComponent } from './components/inspections/inspections.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ReportsViewingComponent } from './components/reports-viewing/reports-viewing.component';
 
+import { InspectionService } from './services/inspection.service';
+import { PropertyService } from './services/property.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { ReportsViewingComponent } from './reports-viewing/reports-viewing.compo
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [InspectionService, PropertyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
