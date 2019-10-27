@@ -14,6 +14,7 @@ import { ReportsViewingComponent } from './components/reports-viewing/reports-vi
 
 import { InspectionService } from './services/inspection.service';
 import { PropertyService } from './services/property.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { PropertyService } from './services/property.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [InspectionService, PropertyService],
+  providers: [InspectionService, PropertyService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
