@@ -4,6 +4,8 @@ import { Inspection } from '../../models/Inspection';
 import { Report } from '../../models/Report';
 import { User } from '../../models/User';
 
+import { UserService} from '../../services/user.service';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,11 +19,12 @@ export class DashboardComponent implements OnInit {
 
   reports: Report[];
 
-  user: User[];
+  user: User;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.user = this.userService.getUser();
   }
 
 }
