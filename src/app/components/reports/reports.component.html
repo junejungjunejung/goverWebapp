@@ -15,11 +15,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{ Property.name }}</td>
-        <td>{{ inspection.time }}</td>
-        <td>{{ property.tenent }}</td>
-        <td>{{ inspection.status }}</td>
+      <tr *ngFor="let report of reports">
+        <td>{{ report.inspection.property.name }}</td>
+        <td>{{ report.inspection.time }}</td>
+        <td>{{ report.inspection.property.tenent }}</td>
+        <td>{{ report.inspection.status }}</td>
       </tr>
     </tbody>
   </table>
