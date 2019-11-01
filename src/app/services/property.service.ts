@@ -14,19 +14,19 @@ export class PropertyService {
         name: 'Isengard',
         address: 'North of the White Mountains and west of Anórien',
         tenent: 'Saruman',
-        image: '../../assets/Isengard.svg'
+        image: '../../assets/Isengard.jpg'
       },
       {
         name: 'Isengard',
         address: 'North of the White Mountains and west of Anórien',
         tenent: 'Saruman',
-        image: '../../assets/Isengard.svg'
+        image: '../../assets/Isengard.jpg'
       },
       {
         name: 'Isengard',
         address: 'North of the White Mountains and west of Anórien',
         tenent: 'Saruman',
-        image: '../../assets/Isengard.svg'
+        image: '../../assets/Isengard.jpg'
       }
     ]
    }

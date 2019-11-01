@@ -12,6 +12,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReportsViewingComponent } from './components/reports-viewing/reports-viewing.component';
 
+import { ReportService } from './services/report.service';
 import { InspectionService } from './services/inspection.service';
 import { PropertyService } from './services/property.service';
 import { UserService } from './services/user.service';
@@ -32,7 +33,7 @@ import { UserService } from './services/user.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [InspectionService, PropertyService, UserService],
+  providers: [InspectionService, PropertyService, UserService, ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

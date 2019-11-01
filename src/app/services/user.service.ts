@@ -11,7 +11,7 @@ export class UserService {
   constructor() { 
     this.user = 
       {
-        name: 'Marinella'
+        name: 'Deninho'
       }
   }
 

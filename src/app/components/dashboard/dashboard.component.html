@@ -14,7 +14,7 @@
     <div class="inspections-container">
       <h2>"total" inspections</h2>
       <div *ngFor="let inspection of inspections">
-        <img [src]="inspection.image" alt="">
+        <img [src]="inspection.property.image" alt="">
         <h3>Inspection of {{ inspection.Property.name }}</h3>
         <p>for {{ inspection.property.tenent }}</p>
         <p>on {{ inspection.time }}</p>
