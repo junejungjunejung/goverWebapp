@@ -4,6 +4,7 @@ import { Inspection } from '../../models/Inspection';
 import { Report } from '../../models/Report';
 import { User } from '../../models/User';
 
+import { ReportService } from '../../services/report.service';
 import { PropertyService } from '../../services/property.service';
 import { InspectionService } from '../../services/inspection.service';
 import { UserService} from '../../services/user.service';
@@ -15,24 +16,26 @@ import { UserService} from '../../services/user.service';
 })
 export class DashboardComponent implements OnInit {
   
+  user: User;
+  
   properties: Property[];
 
   inspections: Inspection[];
 
   reports: Report[];
 
-  user: User;
-
   constructor(
     private userService: UserService,
     private propertyService: PropertyService,
-    private inspectionService: InspectionService
+    private inspectionService: InspectionService,
+    private reportService: ReportService
     ) { }
 
   ngOnInit() {
     this.user = this.userService.getUser();
     this.properties = this.propertyService.getProperties();
     this.inspections = this.inspectionService.getInspections();
+    this.reports = this.reportService.getReports();
   }
 
 }

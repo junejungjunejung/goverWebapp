@@ -5,24 +5,27 @@ import { Property } from '../models/Property';
 @Injectable({
   providedIn: 'root'
 })
+
 export class InspectionService {
   inspections: Inspection[];
-  constructor() { 
+
+  constructor() {
+
     this.inspections = [
       {
         time: 'Oct 31st -07:00pm',
         status: 'Signed',
-        property: Property,
+        property: new Property('Isengard','North of the White Mountains and west of Anórien', 'Saruman','../../assets/Isengard.jpg')
       },
       {
         time: 'Oct 31st -07:00pm',
         status: 'Pending',
-        property: Property,
+        property: new Property('Isengard','North of the White Mountains and west of Anórien', 'Saruman','../../assets/Isengard.jpg')
       },     
       {
         time: 'Oct 31st -07:00pm',
         status: 'Signed',
-        property: Property,
+        property: new Property('Isengard','North of the White Mountains and west of Anórien', 'Saruman','../../assets/Isengard.jpg')
       }
     ]
   }
