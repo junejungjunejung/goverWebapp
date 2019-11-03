@@ -14,13 +14,13 @@ export class ReportService {
 
     this.reports = [
       { id: 1,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien', 'Saruman','../../assets/Isengard.jpg'))
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman')
       },
       { id: 2,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien', 'Saruman','../../assets/Isengard.jpg'))
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman')
       },
       { id: 3,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien', 'Saruman','../../assets/Isengard.jpg'))
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman')
       }
     ]
   }
