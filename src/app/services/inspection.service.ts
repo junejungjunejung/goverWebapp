@@ -33,4 +33,5 @@ export class InspectionService {
   getInspections(): Inspection[]{
     return this.inspections;
   }
+  
 }
