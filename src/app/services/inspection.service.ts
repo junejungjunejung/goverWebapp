@@ -16,19 +16,22 @@ export class InspectionService {
         time: 'Oct 31st -07:00pm',
         status: 'Signed',
         property: new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),
-        tenant: 'Saruman'
+        tenant: 'Saruman',
+        image: '../../assets/Isengard.jpg'
       },
       {
         time: 'Oct 31st -07:00pm',
         status: 'Signed',
         property: new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),
-        tenant: 'Saruman'
+        tenant: 'Saruman',
+        image: '../../assets/Isengard.jpg'
       },     
       {
         time: 'Oct 31st -07:00pm',
         status: 'Signed',
         property: new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),
-        tenant: 'Saruman'
+        tenant: 'Saruman',
+        image: '../../assets/Isengard.jpg'
       }
     ]
   }
