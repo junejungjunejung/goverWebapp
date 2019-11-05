@@ -16,7 +16,7 @@
       <div *ngFor="let inspection of inspections">
         <img [src]="inspection.image" alt="">
         <h3>Inspection of {{ inspection.property.name }}</h3>
-        <p>for {{ inspection.property.tenent }}</p>
+        <p>for {{ inspection.tenant }}</p>
         <p>on {{ inspection.time }}</p>
       </div>
     </div>
@@ -26,7 +26,7 @@
       <div *ngFor="let report of reports">
         <img [src]="report.inspection.property.image" alt="">
         <h3>Report of {{ report.inspection.property.name }}</h3>
-        <p>for {{ report.inspection.property.tenent }}</p>
+        <p>for {{ report.inspection.tenant }}</p>
         <p>on {{ report.inspection.time }}</p>
       </div>
     </div>
