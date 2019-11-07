@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'properties', component: PropertiesComponent},
   {path: 'inspections', component: InspectionsComponent},
   {path: 'reports', component: ReportsComponent},
-  {path: 'reports-viewing', component: ReportsViewingComponent},
+  {path: 'reports-viewing/:id', component: ReportsViewingComponent},
   {path: 'profile', component: ProfileComponent}
 ];
 
