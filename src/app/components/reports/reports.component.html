@@ -16,10 +16,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let report of reports">
+      <a routerLink="/reports-viewing/{{report.id}}">
         <td>{{ report.inspection.property.name }}</td>
         <td>{{ report.inspection.time }}</td>
-        <td>{{ report.inspection.property.tenent }}</td>
+        <td>{{ report.inspection.tenant }}</td>
         <td>{{ report.inspection.status }}</td>
+      </a>
       </tr>
     </tbody>
   </table>

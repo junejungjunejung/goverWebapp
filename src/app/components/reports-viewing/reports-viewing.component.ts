@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Property } from '../../models/Property';
-import { Inspection } from '../../models/Inspection';
 import { Report } from '../../models/Report';
+import { ActivatedRoute } from '@angular/router';
+import { ReportService } from '../../services/report.service';
 
 @Component({
   selector: 'app-reports-viewing',
@@ -10,15 +10,30 @@ import { Report } from '../../models/Report';
 })
 export class ReportsViewingComponent implements OnInit {
 
-  properties: Property[];
-
-  inspections: Inspection[];
-
-  reports: Report[];
-
-  constructor() { }
+  constructor(private reportService: ReportService, private router: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    if (this.router.snapshot.paramMap.get('id')) {
+      this.loadReport(this.router.snapshot.paramMap.get('id'));
+    }
   }
 
+  report: Report;
+
+  
+  loadReport(reportId){
+    console.log(reportId);
+  //   let reportObs: Observable<Report>;
+  //   reportObs = this.reportService.fetchReport(reportId);
+
+  //   reportObs.subscribe(
+  //     resData => {
+  //       this.report = resData;
+  //     },
+  //     errorMsg => {
+  //       console.log(errorMsg);
+  //     }
+  //   )
+  }
 }

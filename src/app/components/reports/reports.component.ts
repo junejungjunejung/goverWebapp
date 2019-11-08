@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Property } from '../../models/Property';
-import { Inspection } from '../../models/Inspection';
+import { Observable } from 'rxjs';
+
 import { Report } from '../../models/Report';
+
+import { ReportService } from '../../services/report.service';
 
 @Component({
   selector: 'app-reports',
@@ -10,15 +12,14 @@ import { Report } from '../../models/Report';
 })
 export class ReportsComponent implements OnInit {
 
-  properties: Property[];
-
-  inspections: Inspection[];
-
   reports: Report[];
 
-  constructor() { }
+  constructor(
+    private reportService: ReportService
+  ) { }
 
   ngOnInit() {
+    this.reports = this.reportService.getReports();
   }
 
 }
