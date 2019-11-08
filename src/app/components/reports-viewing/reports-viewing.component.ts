@@ -9,6 +9,7 @@ import { ReportService } from '../../services/report.service';
   styleUrls: ['./reports-viewing.component.scss']
 })
 export class ReportsViewingComponent implements OnInit {
+  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
 
   constructor(private reportService: ReportService, private router: ActivatedRoute
   ) { }
@@ -20,7 +21,6 @@ export class ReportsViewingComponent implements OnInit {
   }
 
   report: Report;
-
   
   loadReport(reportId){
     console.log(reportId);
