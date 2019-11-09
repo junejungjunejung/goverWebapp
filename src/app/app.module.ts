@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -18,6 +19,9 @@ import { InspectionService } from './services/inspection.service';
 import { PropertyService } from './services/property.service';
 import { UserService } from './services/user.service';
 
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { PdfComponent } from './components/pdf/pdf.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,12 +32,15 @@ import { UserService } from './services/user.service';
     InspectionsComponent,
     ReportsComponent,
     ProfileComponent,
-    ReportsViewingComponent
+    ReportsViewingComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    HttpClientModule,
+    NgbModule,
+    PdfViewerModule
   ],
   providers: [InspectionService, PropertyService, UserService, ReportService],
   bootstrap: [AppComponent]
