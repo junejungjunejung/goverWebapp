@@ -2,9 +2,9 @@
   <a class="" routerLink="/reports">
     <img src="" alt="go back">
   </a>
-  <h2>Report of {{ property.name }}</h2>
-  <h3>for {{ inspection.tenant }}</h3>
-  <h3>inspection on {{ inspection.time }}</h3>
+  <h2>Report of {{ report.inspection.property.name }}</h2>
+  <h3>for {{ report.inspection.tenant }}</h3>
+  <h3>inspection on {{ report.inspection.time }}</h3>
 
   <button type="button" onclick="">share</button>
   <button type="button" onclick="">download</button>

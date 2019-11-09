@@ -39,19 +39,19 @@ export class ReportService {
 
   
   fetchReport(reportId: number) {
-          
-    // let report = new Report();
-    // return report;
 
     return this.http
       .get<Report>(
-        'http://159.65.44.135/api/report/' + reportId
+        'https://api.greenfill.wmdd.ca/company/' + reportId
       )
       .pipe(
         catchError(this.handleError),
         map(responseData => {
           let report = new Report();
-          //report = responseData['company'];
+          report.id  = 2;
+          let inspection = new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg');
+          report.inspection = inspection;
           return report;
         })
       );

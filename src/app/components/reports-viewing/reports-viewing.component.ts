@@ -25,11 +25,13 @@ export class ReportsViewingComponent implements OnInit {
   
   loadReport(reportId){
 
+    console.log("loadReport");
     let reportObs: Observable<Report>;
     reportObs = this.reportService.fetchReport(reportId);
 
     reportObs.subscribe(
       resData => {
+        console.log(resData);
         this.report = resData;
       },
       errorMsg => {
