@@ -12,6 +12,22 @@ import { Observable } from 'rxjs';
 export class ReportsViewingComponent implements OnInit {
   
   pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  page: number = 1;
+  totalPages: number;
+  isLoaded: boolean = false;
+
+  afterLoadComplete(pdfData: any) {
+    this.totalPages = pdfData.numPages;
+    this.isLoaded = true;
+  }
+
+  nextPage() {
+    this.page++;
+  }
+
+  prevPage() {
+    this.page--;
+  }
 
   constructor(private reportService: ReportService, private router: ActivatedRoute
   ) { }
