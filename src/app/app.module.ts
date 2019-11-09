@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -40,7 +41,8 @@ import { PdfComponent } from './components/pdf/pdf.component';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    PdfViewerModule
+    PdfViewerModule,
+    FormsModule
   ],
   providers: [InspectionService, PropertyService, UserService, ReportService],
   bootstrap: [AppComponent]
