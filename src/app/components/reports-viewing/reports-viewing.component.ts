@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./reports-viewing.component.scss']
 })
 export class ReportsViewingComponent implements OnInit {
-  // pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  
+  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
 
   constructor(private reportService: ReportService, private router: ActivatedRoute
   ) { }
