@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Report } from '../../models/Report';
 import { ActivatedRoute } from '@angular/router';
 import { ReportService } from '../../services/report.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reports-viewing',
@@ -9,7 +10,7 @@ import { ReportService } from '../../services/report.service';
   styleUrls: ['./reports-viewing.component.scss']
 })
 export class ReportsViewingComponent implements OnInit {
-  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  // pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
 
   constructor(private reportService: ReportService, private router: ActivatedRoute
   ) { }
@@ -23,17 +24,17 @@ export class ReportsViewingComponent implements OnInit {
   report: Report;
   
   loadReport(reportId){
-    console.log(reportId);
-  //   let reportObs: Observable<Report>;
-  //   reportObs = this.reportService.fetchReport(reportId);
 
-  //   reportObs.subscribe(
-  //     resData => {
-  //       this.report = resData;
-  //     },
-  //     errorMsg => {
-  //       console.log(errorMsg);
-  //     }
-  //   )
+    let reportObs: Observable<Report>;
+    reportObs = this.reportService.fetchReport(reportId);
+
+    reportObs.subscribe(
+      resData => {
+        this.report = resData;
+      },
+      errorMsg => {
+        console.log(errorMsg);
+      }
+    )
   }
 }
