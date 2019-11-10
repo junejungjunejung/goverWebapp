@@ -6,7 +6,6 @@ import { InspectionsComponent } from './components/inspections/inspections.compo
 import { ReportsComponent } from './components/reports/reports.component';
 import { ReportsViewingComponent } from './components/reports-viewing/reports-viewing.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { PdfComponent } from './components/pdf/pdf.component';
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
@@ -16,7 +15,6 @@ const routes: Routes = [
   {path: 'inspections', component: InspectionsComponent},
   {path: 'reports', component: ReportsComponent},
   {path: 'reports-viewing/:id', component: ReportsViewingComponent},
-  {path: 'pdf', component: PdfComponent},
   {path: 'profile', component: ProfileComponent}
 ];
 

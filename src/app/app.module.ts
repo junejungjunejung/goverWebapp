@@ -21,7 +21,6 @@ import { PropertyService } from './services/property.service';
 import { UserService } from './services/user.service';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { PdfComponent } from './components/pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { PdfComponent } from './components/pdf/pdf.component';
     InspectionsComponent,
     ReportsComponent,
     ProfileComponent,
-    ReportsViewingComponent,
-    PdfComponent
+    ReportsViewingComponent
   ],
   imports: [
     BrowserModule,
