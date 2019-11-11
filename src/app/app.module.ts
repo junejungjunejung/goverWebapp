@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -20,7 +21,6 @@ import { PropertyService } from './services/property.service';
 import { UserService } from './services/user.service';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { PdfComponent } from './components/pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -32,15 +32,15 @@ import { PdfComponent } from './components/pdf/pdf.component';
     InspectionsComponent,
     ReportsComponent,
     ProfileComponent,
-    ReportsViewingComponent,
-    PdfComponent
+    ReportsViewingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    PdfViewerModule
+    PdfViewerModule,
+    FormsModule
   ],
   providers: [InspectionService, PropertyService, UserService, ReportService],
   bootstrap: [AppComponent]
