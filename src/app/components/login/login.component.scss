@@ -1,0 +1,30 @@
+@import 'src/variables';
+
+.image img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
+a{
+  display:inline;
+  text-decoration: none;
+  font-family: $body-font;
+  color: $font-main-color;
+}
+
+button#login{
+  background-color: $button-color1;
+}
+
+input{
+  border: none;
+  border-bottom: 1px solid  $field_border;
+}
+
+input:focus {
+  background-color: $field_bgc;
+}

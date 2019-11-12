@@ -1,3 +1,21 @@
-img {
-  height:50px;
+@import 'src/variables';
+
+img{
+  height: 50px;
+}
+
+.user-greeting{
+  color:$font-color2;
+}
+
+.dashboard h2{
+  color: $font-color3;
+}
+
+.dashboard h3{
+  color:$font-color2;
+}
+
+.dashboard h3:hover{
+  color:$font-main-color;
 }

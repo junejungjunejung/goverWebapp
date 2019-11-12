@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { UserService, AuthResponseData } from '../../services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -18,11 +18,11 @@ export class LoginComponent {
       return;
       // if form is not valid, stop the execution
     }
-    const email = form.value.email;
-    const password = form.value.password;
+    // const email = form.value.email;
+    // const password = form.value.password;
 
-    let authObs: Observable<AuthResponseData>;    
-    authObs = this.userService.login(email, password);
+    // let authObs: Observable<AuthResponseData>;    
+    // authObs = this.userService.login(email, password);
 
     // authObs.subscribe(
     //   resData => {
@@ -37,6 +37,6 @@ export class LoginComponent {
     //   }
     // );
 
-    form.reset();
+    // form.reset();
   }
 }

@@ -1,0 +1,20 @@
+@import 'src/variables';
+
+.sidebar{
+  background-color: $nav-bgc;
+}
+
+a{
+  display:inline;
+  text-decoration: none;
+  font-family: $main-font;
+  color: $font-main-color;
+}
+
+a:hover{
+  color: $font-color1;
+}
+
+.logout{
+  color: $font-color1;
+}

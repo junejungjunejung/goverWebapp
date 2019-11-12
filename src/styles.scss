@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+
+@import './variables';
+
+/*Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Saira:600,700&display=swap');
+
+
+body{
+  margin: 0; 
+  color: $font-main-color;
+}

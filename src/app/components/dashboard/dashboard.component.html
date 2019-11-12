@@ -1,7 +1,7 @@
-<div class="p-2">
-  <h1>WELCOME, {{ user.name }}</h1>
+<div class="dashboard p-2">
+  <h1 class="user-greeting">Welcome, {{ user.name }}</h1>
 
-  <div class="d-flex row p-3">
+  <div class="flex row p-3">
     <div class="properties-container">
       <h2>{{ properties.length }} properties</h2>
       <div *ngFor="let property of properties">
