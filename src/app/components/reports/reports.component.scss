@@ -1,0 +1,26 @@
+@import 'src/variables';
+
+h2{
+  color: $font-color2;
+}
+
+a{
+  display:inline;
+  text-decoration: none;
+  font-family: $body-font;
+  color: $font-main-color;
+}
+
+.table th{
+  color: $font-color3;
+  border: none;
+}
+
+tbody tr{
+  background-color: $list-bgc;
+  border: .5rem solid white;
+}
+
+tbody tr:hover{
+  background-color: $list-bgc-hover;
+}

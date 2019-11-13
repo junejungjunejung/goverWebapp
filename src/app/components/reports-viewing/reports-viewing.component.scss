@@ -1,0 +1,25 @@
+@import 'src/variables';
+
+h2{
+  color: $font-color2;
+  font-family: $main-font;
+}
+
+h3 span{
+  color: $font-color4;
+  font-family: $body-font;
+}
+
+button#share{
+  background-color: $button-color1;
+  color: $font-color1;
+  font-family: $main-font;
+  border: none;
+}
+
+button#download{
+  background-color: $button-color2;
+  color: $font-color1;
+  font-family: $main-font;
+  border: none;
+}

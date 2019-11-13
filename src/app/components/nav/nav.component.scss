@@ -11,8 +11,8 @@ a{
   color: $font-main-color;
 }
 
-a:hover{
-  color: $font-color1;
+nav li:hover{
+  background-color: $nav-bgc-hover;
 }
 
 .logout{

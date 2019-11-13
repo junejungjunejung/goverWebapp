@@ -1,4 +1,7 @@
 @import 'src/variables';
+form label{
+  font-family: $body-font;
+}
 
 .image img {
   width: 100%;
@@ -18,6 +21,7 @@ a{
 
 button#login{
   background-color: $button-color1;
+  font-family: $main-font;
 }
 
 input{

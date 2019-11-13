@@ -1,13 +1,14 @@
 <div>
-  <a class="" routerLink="/reports">
-    <img src="" alt="go back">
+  <a class="" routerLink="/">
+    <img src="../../assets/arrow_icon.svg" alt="go back">
   </a>
-  <h2>Report of {{ report.inspection.property.name }}</h2>
-  <h3>for {{ report.inspection.tenant }}</h3>
-  <h3>inspection on {{ report.inspection.time }}</h3>
 
-  <button type="button" onclick="">share</button>
-  <button type="button" onclick="">download</button>
+  <h2>Report of {{ report.inspection.property.name }}</h2>
+  <h3><span>for</span> {{ report.inspection.tenant }}</h3>
+  <h3><span>inspection on</span> {{ report.inspection.time }}</h3>
+
+  <button type="button" id="share" onclick="">share</button>
+  <button type="button" id="download" onclick="">download</button>
 
   <div class="pdf-container">
     <div *ngIf="isLoaded" style="text-align: center;">
