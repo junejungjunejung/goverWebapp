@@ -1,5 +1,14 @@
 @import 'src/variables';
 
+.lists-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.lists-item{
+  flex: 100%;
+}
+
 img{
   height: 50px;
 }
@@ -18,4 +27,19 @@ img{
 
 .dashboard h3:hover{
   color:$font-main-color;
+}
+
+p{
+  font-family: $body-font;
+}
+
+span{
+  color: $font-color4;
+}
+
+@media screen and (min-width: 700px) {
+  .lists-container{
+    flex-direction: row;
+  }
+  
 }

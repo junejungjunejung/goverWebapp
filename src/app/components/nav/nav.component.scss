@@ -2,12 +2,15 @@
 
 .sidebar{
   background-color: $nav-bgc;
+  height: 100%;
+  // position: fixed;
+  // top: 0; 
+  // left: 0;
 }
 
 a{
   display:inline;
   text-decoration: none;
-  font-family: $main-font;
   color: $font-main-color;
 }
 
@@ -17,4 +20,47 @@ nav li:hover{
 
 .logout{
   color: $font-color1;
+}
+
+.logo-container .web-logo {
+  display: none;
+}
+
+.logo-container .mobile-logo {
+  display: block;
+}
+
+.nav-item span{
+  display: none;
+}
+
+.profile span{
+  display: none;
+}
+
+.logout span{
+  display: none;
+}
+
+// Media Query
+
+@media screen and (min-width: 700px) {
+  .logo-container .mobile-logo {
+    display: none;
+  }
+  .logo-container .web-logo {
+    display: block;
+  }
+
+  .nav-item span{
+    display: inline;
+  }
+  
+  .profile span{
+    display: inline;
+  }
+
+  .logout span{
+    display: inline;
+  }
 }

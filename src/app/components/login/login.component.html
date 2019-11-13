@@ -1,41 +1,51 @@
+<div class="main-container">
+  <div class="login-container">
+    <img class="" src="../../assets/login_logo.svg" alt="Gover" width="" height="">
 
-<img class="" src="../../assets/login_logo.svg" alt="Gover" width="" height="">
-<form class="form-signin" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
-    <label for="inputEmail" class=""><img src="" alt="">email</label>
-    <input 
-      type="email" 
-      id="email" 
-      class="form-control"
-      ngModel
-      name="email"  
-      required 
-      autofocus>
+    <form class="form-signin" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <label for="inputEmail" class=""><img src="" alt="">email</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control"
+          ngModel
+          name="email"  
+          required 
+          autofocus>
+        
+        <label for="inputPassword" class=""><img src="" alt="">password</label>
+        <div class="input-container">
+          <input 
+            type="password" 
+            id="password"
+            ngModel
+            class="form-control" 
+            required>
+          <img src="../../assets/eye_icon.svg" alt="">
+        </div>
+      <button 
+        class="btn btn-lg btn-primary btn-block" 
+        id="login"
+        type="submit"
+        [disabled]="!authForm.valid">login
+      </button>
 
-    <label for="inputPassword" class=""><img src="" alt="">password</label>
-    <input 
-      type="password" 
-      id="password"
-      ngModel
-      class="form-control" 
-      required>
+      <div class="mb-4">
+        <a class="" routerLink="">
+          forgot password?
+        </a>
+      </div>
+    </form>
 
-  <button 
-    class="btn btn-lg btn-primary btn-block" 
-    id="login"
-    type="submit"
-    [disabled]="!authForm.valid">login
-  </button>
-
-  <div class="mb-4">
-    <a class="" routerLink="">
-      forgot password?
-    </a>
+    <!-- <div class="alert alert-danger" *ngIf="error"><p>{{ error }}</p></div> -->
   </div>
-</form>
 
-<!-- <div class="alert alert-danger" *ngIf="error">
-  <p>{{ error }}</p>
-</div> -->
-<div class="image">
-  <!-- <img src="../../assets/login_web_bgi.svg" alt=""> -->
+  <div class="bgi-container">
+    <div class="web-bgi">
+      <img src="../../assets/login_web_bgi.svg" alt="">
+    </div>
+    <div class="mobile-bgi">
+      <img src="../../assets/login_mob_bgi.svg" alt="">
+    </div>
+  </div>
 </div>

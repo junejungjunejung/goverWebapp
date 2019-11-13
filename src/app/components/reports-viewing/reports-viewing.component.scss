@@ -2,24 +2,32 @@
 
 h2{
   color: $font-color2;
-  font-family: $main-font;
+}
+
+h3{
+  font-family: $body-font;
+  font-weight: bold;
 }
 
 h3 span{
   color: $font-color4;
-  font-family: $body-font;
+  font-weight: normal;
+}
+
+button{
+  color: $font-color1;
+  border: none;
 }
 
 button#share{
   background-color: $button-color1;
-  color: $font-color1;
-  font-family: $main-font;
-  border: none;
 }
 
 button#download{
   background-color: $button-color2;
-  color: $font-color1;
-  font-family: $main-font;
-  border: none;
+}
+
+.pdf-container{
+  max-width: 100%;
+  height: auto;
 }

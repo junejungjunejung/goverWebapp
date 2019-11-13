@@ -1,16 +1,4 @@
 @import 'src/variables';
-form label{
-  font-family: $body-font;
-}
-
-.image img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-}
 
 a{
   display:inline;
@@ -19,16 +7,43 @@ a{
   color: $font-main-color;
 }
 
+.input-container {
+  display: flex;
+}
+
 button#login{
   background-color: $button-color1;
-  font-family: $main-font;
+  border: none;
 }
 
 input{
   border: none;
   border-bottom: 1px solid  $field_border;
+  font-family: $body-font;
 }
 
 input:focus {
   background-color: $field_bgc;
+}
+
+.bgi-container .mobile-bgi {
+  display: block;
+}
+.bgi-container .web-bgi {
+  display: none;
+}
+
+// Media Query
+
+@media screen and (min-width: 700px) {
+  .main-container{
+    display: flex;
+  }
+  
+  .bgi-container .mobile-bgi {
+    display: none;
+  }
+  .bgi-container .web-bgi {
+    display: block;
+  }
 }

@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1106" height="1080" viewBox="0 0 1106 1080">
   <defs>
     <clipPath id="clip-path">
-      <rect id="Rectangle_1551" data-name="Rectangle 1551" width="1920" height="1080" fill="#fff" stroke="#707070" stroke-width="1"/>
+      <rect id="Rectangle_1551" data-name="Rectangle 1551" width="1106" height="1080" transform="translate(814)" fill="#fff" stroke="#707070" stroke-width="1"/>
     </clipPath>
     <linearGradient id="linear-gradient" x1="5.157" y1="0.5" x2="6.157" y2="0.5" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#8183be"/>
@@ -173,7 +173,7 @@
     <linearGradient id="linear-gradient-261" x1="-96.996" y1="0.5" x2="-95.996" y2="0.5" xlink:href="#linear-gradient-20"/>
     <linearGradient id="linear-gradient-262" x1="-46.507" y1="0.5" x2="-45.507" y2="0.5" xlink:href="#linear-gradient-20"/>
   </defs>
-  <g id="Mask_Group_40" data-name="Mask Group 40" clip-path="url(#clip-path)">
+  <g id="Mask_Group_42" data-name="Mask Group 42" transform="translate(-814)" clip-path="url(#clip-path)">
     <g id="Group_532" data-name="Group 532">
       <path id="Path_1116" data-name="Path 1116" d="M1250,0c690.356,0,1250,560.546,1250,1252.014S1940.356,2504.028,1250,2504.028,0,1943.482,0,1252.014,559.644,0,1250,0Z" transform="translate(814 -577)" fill="#f39b90"/>
       <text id="make_inspection_work_becomes_effortless." data-name="make inspection work becomes effortless." transform="translate(1086 925)" fill="#fff" font-size="30" font-family="Saira-Medium, Saira" font-weight="500"><tspan x="0" y="0">make inspection work becomes effortless.</tspan></text>
