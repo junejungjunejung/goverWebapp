@@ -1,8 +1,10 @@
 <div class="reports-container">
-  <a class="" routerLink="/">
-    <img src="../../assets/arrow_icon.svg" alt="go back">
-  </a>
-  <h2>Reports</h2>
+  <div class="header-container">
+    <a class="" routerLink="/">
+      <img src="../../assets/arrow_icon.svg" alt="go back">
+    </a>
+    <h2>Reports</h2>
+  </div>
 
   <table class="table">
     <thead>
@@ -15,10 +17,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let report of reports" routerLink="/reports-viewing/{{report.id}}">
-        <td>{{ report.inspection.property.name }}</td>
-        <td>{{ report.inspection.time }}</td>
-        <td>{{ report.inspection.tenant }}</td>
-        <td>{{ report.inspection.status }}</td>
+        <td class="property">{{ report.inspection.property.name }}</td>
+        <td class="time">{{ report.inspection.time }}</td>
+        <td class="tenent">{{ report.inspection.tenant }}</td>
+        <td class="status">{{ report.inspection.status }}</td>
       </tr>
     </tbody>
   </table>

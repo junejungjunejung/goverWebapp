@@ -1,9 +1,10 @@
 <div class="viewing-container">
-  <a class="" routerLink="/reports">
-    <img src="../../assets/arrow_icon.svg" alt="go back">
-  </a>
-
-  <h2>Report of {{ report.inspection.property.name }}</h2>
+  <div class="header-container">
+    <a class="" routerLink="/reports">
+      <img src="../../assets/arrow_icon.svg" alt="go back">
+    </a>
+    <h2>Report of {{ report.inspection.property.name }}</h2>
+  </div>
 
   <div class="viewing-detail-container">
     <div class="description-container">
@@ -23,10 +24,11 @@
       <span>{{ page }} / {{ totalPages }}</span>
       <button (click)="nextPage()" [disabled]="page === totalPages">Next</button>
     </div>
-    <pdf-viewer [src]="pdfSrc" 
-                [show-all]="false"
-                [page]="page"
-                (after-load-complete)="afterLoadComplete($event)"
+    <pdf-viewer 
+    [src]="pdfSrc" 
+    [show-all]="false"
+    [page]="page"
+    (after-load-complete)="afterLoadComplete($event)"
     ></pdf-viewer>
   </div>
 </div>  

@@ -43,7 +43,7 @@ nav li:hover{
 }
 
 .logo-container{
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 .nav-item{
@@ -98,7 +98,7 @@ nav li:hover{
 
 @media screen and (min-width: 700px) {
   .sidebar{
-    min-width: 10rem;
+    min-width: 220px;
   }
   
   .logo-container .mobile-logo {
@@ -106,8 +106,12 @@ nav li:hover{
   }
   .logo-container .web-logo {
     display: block;
+    max-width: 215px;
   }
 
+  span{
+    font-size: 24px;
+  }
 
   .nav-item img{
     display: inline;

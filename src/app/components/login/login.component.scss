@@ -1,12 +1,13 @@
 @import 'src/variables';
 
 .login-container{
-  padding: 1.5rem;
+  padding: 2rem;
+  margin: 0 4rem;
 }
 
 .login-container .logo{
   display:block;
-  margin: auto;
+  margin: 2rem auto;
   padding: 1.5rem;
 }
 
@@ -32,8 +33,20 @@ input{
   font-family: $body-font;
 }
 
+input#email{
+  margin-bottom: 2rem;
+}
+
+.input-container{
+  margin-bottom: 2rem;
+}
+
 input:focus {
   background-color: $field_bgc;
+}
+
+#login{
+  margin-bottom: 1rem;
 }
 
 .bgi-container .mobile-bgi {
@@ -50,6 +63,12 @@ input:focus {
     display: flex;
   }
   
+  .login-container{
+    padding: 1rem 2rem;
+    margin: 0;
+    align-self: center;
+  }
+
   .bgi-container .mobile-bgi {
     display: none;
   }
