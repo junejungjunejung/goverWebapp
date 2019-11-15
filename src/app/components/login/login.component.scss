@@ -1,5 +1,15 @@
 @import 'src/variables';
 
+.login-container{
+  padding: 1.5rem;
+}
+
+.login-container .logo{
+  display:block;
+  margin: auto;
+  padding: 1.5rem;
+}
+
 a{
   display:inline;
   text-decoration: none;

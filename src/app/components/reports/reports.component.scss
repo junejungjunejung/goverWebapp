@@ -1,7 +1,12 @@
 @import 'src/variables';
 
+.reports-container{
+  padding: 1.5rem;
+}
+
 h2{
   color: $font-color2;
+  padding-top: 1rem;
 }
 
 a{
@@ -11,14 +16,18 @@ a{
   color: $font-main-color;
 }
 
-.table th{
+table{
+  overflow-x:auto;
+}
+
+thead th{
   color: $font-color3;
   border: none;
 }
 
 tbody tr{
   background-color: $list-bgc;
-  border: .5rem solid white;
+  border: .5rem solid $reports-border;
 }
 
 tbody tr:hover{

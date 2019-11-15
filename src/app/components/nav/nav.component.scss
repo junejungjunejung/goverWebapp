@@ -3,9 +3,11 @@
 .sidebar{
   background-color: $nav-bgc;
   height: 100%;
-  // position: fixed;
-  // top: 0; 
-  // left: 0;
+  min-width: 4rem;
+}
+
+ul{
+  margin-bottom: 10rem;
 }
 
 a{
@@ -14,12 +16,42 @@ a{
   color: $font-main-color;
 }
 
+li.nav-item{
+  border-bottom: 1px solid $nav-border;
+}
+
+li.nav-item:last-child{
+  border: none;
+  border-left: .5rem solid $nav-bgc;
+}
+
+.logout-container{
+  border-top: 1px solid $nav-border;
+}
+
+nav li{
+  border-left: .5rem solid $nav-bgc;
+}
+
 nav li:hover{
   background-color: $nav-bgc-hover;
+  border-left: .5rem solid $nav-accent;
 }
 
 .logout{
   color: $font-color1;
+}
+
+.logo-container{
+  padding: 1rem;
+}
+
+.nav-item{
+  padding: 1rem;
+}
+
+.nav-link{
+  padding:0;
 }
 
 .logo-container .web-logo {
@@ -30,12 +62,32 @@ nav li:hover{
   display: block;
 }
 
+.nav-item img{
+  display:block;
+  margin: auto;
+}
+
 .nav-item span{
   display: none;
 }
 
+.nav-link span{
+  padding-left: .5rem;
+}
+
+.profile-container{
+  margin: 0;
+  padding: 0;
+  border-left: .5rem solid $nav-bgc;
+}
+
 .profile span{
   display: none;
+}
+
+.logout-container{
+  padding: 1rem;
+  border-left: .5rem solid $nav-bgc;
 }
 
 .logout span{
@@ -45,11 +97,20 @@ nav li:hover{
 // Media Query
 
 @media screen and (min-width: 700px) {
+  .sidebar{
+    min-width: 10rem;
+  }
+  
   .logo-container .mobile-logo {
     display: none;
   }
   .logo-container .web-logo {
     display: block;
+  }
+
+
+  .nav-item img{
+    display: inline;
   }
 
   .nav-item span{

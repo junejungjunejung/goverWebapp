@@ -1,15 +1,22 @@
-<div>
-  <a class="" routerLink="/">
+<div class="viewing-container">
+  <a class="" routerLink="/reports">
     <img src="../../assets/arrow_icon.svg" alt="go back">
   </a>
 
   <h2>Report of {{ report.inspection.property.name }}</h2>
-  <h3><span>for</span> {{ report.inspection.tenant }}</h3>
-  <h3><span>inspection on</span> {{ report.inspection.time }}</h3>
 
-  <button type="button" id="share" onclick="">share</button>
-  <button type="button" id="download" onclick="">download</button>
+  <div class="viewing-detail-container">
+    <div class="description-container">
+      <h3><span>for</span> {{ report.inspection.tenant }}</h3>
+      <h3><span>inspection on</span> {{ report.inspection.time }}</h3>
+    </div>
 
+    <div class="button-container">
+      <button type="button" id="share" onclick="">share</button>
+      <button type="button" id="download" onclick="">download</button>
+    </div>
+  </div>
+  
   <div class="pdf-container">
     <div *ngIf="isLoaded" style="text-align: center;">
       <button (click)="prevPage()" [disabled]="page === 1">Prev</button>
