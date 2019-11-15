@@ -8,15 +8,15 @@ import { throwError, Subject } from 'rxjs';
   providedIn: 'root'
 })
 
-export interface AuthResponseData {
-  kind: string;
-  idToken: string;
-  email: string;
-  refreshToken: string;
-  expiresIn: string;
-  localId: string;
-  registered?: boolean;
-}
+// export interface AuthResponseData {
+//   kind: string;
+//   idToken: string;
+//   email: string;
+//   refreshToken: string;
+//   expiresIn: string;
+//   localId: string;
+//   registered?: boolean;
+// }
 
 
 export class UserService {
@@ -29,47 +29,47 @@ export class UserService {
       }
   }
 
-  login(email: string, password: string) {
-    return this.http
-      .post<AuthResponseData>(
-        'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBGgZKzCzj2zvprzCbUyxYR3E2ANKW4p1c',
-        { //sending parameters to the API via POST method
-          email: email,
-          password: password,
-          returnSecureToken: true
-        }
-      )
-      .pipe(
-        catchError(this.handleError),
-        tap(resData => {
-          this.handleAuthentication(
-            resData.email,
-            resData.localId,
-            resData.idToken,
-            +resData.expiresIn
-          );
-        })
-      );
-  }
+//   login(email: string, password: string) {
+//     return this.http
+//       .post<AuthResponseData>(
+//         'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBGgZKzCzj2zvprzCbUyxYR3E2ANKW4p1c',
+//         { //sending parameters to the API via POST method
+//           email: email,
+//           password: password,
+//           returnSecureToken: true
+//         }
+//       )
+//       .pipe(
+//         catchError(this.handleError),
+//         tap(resData => {
+//           this.handleAuthentication(
+//             resData.email,
+//             resData.localId,
+//             resData.idToken,
+//             +resData.expiresIn
+//           );
+//         })
+//       );
+//   }
 
-  private handleError(errorRes: HttpErrorResponse) {
-    let errorMessage = 'An unknown error occurred!';
-    if (!errorRes.error || !errorRes.error.error) {
-      return throwError(errorMessage);
-    }
-    switch (errorRes.error.error.message) {
-      case 'EMAIL_EXISTS':
-        errorMessage = 'This email exists already';
-        break;
-      case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email does not exist.';
-        break;
-      case 'INVALID_PASSWORD':
-        errorMessage = 'This password is not correct.';
-        break;
-    }
-    return throwError(errorMessage);
-  }
+//   private handleError(errorRes: HttpErrorResponse) {
+//     let errorMessage = 'An unknown error occurred!';
+//     if (!errorRes.error || !errorRes.error.error) {
+//       return throwError(errorMessage);
+//     }
+//     switch (errorRes.error.error.message) {
+//       case 'EMAIL_EXISTS':
+//         errorMessage = 'This email exists already';
+//         break;
+//       case 'EMAIL_NOT_FOUND':
+//         errorMessage = 'This email does not exist.';
+//         break;
+//       case 'INVALID_PASSWORD':
+//         errorMessage = 'This password is not correct.';
+//         break;
+//     }
+//     return throwError(errorMessage);
+//   }
 
   getUser(): User {
     return this.user;

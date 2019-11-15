@@ -1,33 +1,41 @@
-<div class="p-2">
-  <h1>WELCOME, {{ user.name }}</h1>
+<div class="dashboard p-2">
+  <h1 class="user-greeting greeting-mobile">Welcome,<br/>  
+    {{ user.name }}</h1>
+  <h1 class="user-greeting greeting-web">Welcome, {{ user.name }}</h1>
 
-  <div class="d-flex row p-3">
-    <div class="properties-container">
+  <div class="lists-container">
+    <div class="properties-container list-item">
       <h2>{{ properties.length }} properties</h2>
-      <div *ngFor="let property of properties">
+      <div class="list-card" *ngFor="let property of properties">
         <img [src]="property.image" alt="">
-        <h3>{{ property.name }}</h3>
-        <p>{{ property.address }}</p>
+        <div class="info-container">
+          <h3>{{ property.name }}</h3>
+          <p>{{ property.address }}</p>
+        </div>
       </div>
     </div>
 
-    <div class="inspections-container">
+    <div class="inspections-container list-item">
       <h2>{{ inspections.length }} inspections</h2>
-      <div *ngFor="let inspection of inspections">
+      <div class="list-card" *ngFor="let inspection of inspections">
         <img [src]="inspection.image" alt="">
-        <h3>Inspection of {{ inspection.property.name }}</h3>
-        <p>for {{ inspection.tenant }}</p>
-        <p>on {{ inspection.time }}</p>
+        <div class="info-container">
+          <h3>Inspection of {{ inspection.property.name }}</h3>
+          <p><span>for</span> {{ inspection.tenant }}</p>
+          <p><span>on</span> {{ inspection.time }}</p>
+        </div>
       </div>
     </div>
 
-    <div class="reports-container">
+    <div class="reports-container list-item">
       <h2>{{ reports.length }} reports</h2>
-      <div *ngFor="let report of reports">
+      <div class="list-card" *ngFor="let report of reports">
         <img [src]="report.inspection.property.image" alt="">
-        <h3>Report of {{ report.inspection.property.name }}</h3>
-        <p>for {{ report.inspection.tenant }}</p>
-        <p>on {{ report.inspection.time }}</p>
+        <div class="info-container">
+          <h3>Report of {{ report.inspection.property.name }}</h3>
+          <p><span>for</span> {{ report.inspection.tenant }}</p>
+          <p><span>on</span> {{ report.inspection.time }}</p>
+        </div>
       </div>
     </div>
   

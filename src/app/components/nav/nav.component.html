@@ -1,44 +1,58 @@
 <nav class="sidebar">
   <div class="sidebar-sticky">
     <div class="logo-container">
-      <a routerLink="/" class="web-logo d-flex justify-content-between align-items-center" href="#">
-        <img src="" alt="Gover">
-      </a>
-      <a class="mobile-logo d-flex justify-content-between align-items-center" routerLink="/">
-        <img src="" alt="mobile logo">
-      </a>
+      <div class="web-logo"> 
+        <a routerLink="/" class="web-logo d-flex justify-content-between align-items-center" href="#">
+          <img src="../../assets/web_logo.svg" alt="Gover">
+        </a>
+      </div>
+      <div class="mobile-logo"> 
+        <a class="mobile-logo d-flex justify-content-between align-items-center" routerLink="/">
+          <img src="../../assets/mob_logo.svg" alt="mobile logo">
+        </a>
+      </div>
     </div>
     
     <ul class="nav flex-column">
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/">
-          <img src="" alt="">Dashboard
+          <img src="../../assets/dashboard_icon.svg" alt="">
+          <span>Dashboard</span>
         </a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/properties">
-          <img src="" alt="">Properties
+          <img src="../../assets/property_icon.svg" alt="">
+          <span>Properties</span>
         </a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/inspections">
-          <img src="" alt="">Inspections
+          <img class="nav-icon" src="../../assets/inspection_icon.svg" alt="">
+          <span>Inspections</span>
         </a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/reports">
-          <img src="" alt="">Reports
+          <img src="../../assets/report_icon.svg" alt="">
+          <span>Reports</span>
         </a>
       </li>
     </ul>
 
-    <div class="flex">
+    <div class="profile-container">
       <a class="profile" routerLink="/profile">
-        <img src="" alt="Profile">
-      </a>
-      <a class="logout" routerLink="">
-        <p>Log out</p><img src="" alt="">
+        <img src="../../assets/user_icon.svg" alt="Profile">
+        <span>Profile</span>
       </a>
     </div>
+
+    <div class="logout-container">  
+      <a class="logout" routerLink="">
+          <span>logout</span>
+          <img src="../../assets/logout_icon.svg" alt="">
+      </a>
+    </div>
+    
   </div>
 </nav>

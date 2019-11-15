@@ -1,2 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+
+@import './variables';
+
+/*Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Saira:600,700&display=swap');
+
+
+body{
+  margin: 0; 
+  color: $font-main-color;
+  font-family: $main-font;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1{
+  font-size: 30px;
+}
+
+h2{
+  font-size: 16px;
+}
+
+h3{
+  font-size: 16px;
+}
+
+p{
+  font-size: 12px;
+}
+
+@media screen and (min-width: 700px) {
+  
+  h1{
+    font-size: 48px;
+  }
+
+  h2{
+    font-size: 24px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+}

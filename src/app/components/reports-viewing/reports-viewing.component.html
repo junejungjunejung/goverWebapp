@@ -1,24 +1,34 @@
-<div>
-  <a class="" routerLink="/reports">
-    <img src="" alt="go back">
-  </a>
-  <h2>Report of {{ report.inspection.property.name }}</h2>
-  <h3>for {{ report.inspection.tenant }}</h3>
-  <h3>inspection on {{ report.inspection.time }}</h3>
+<div class="viewing-container">
+  <div class="header-container">
+    <a class="" routerLink="/reports">
+      <img src="../../assets/arrow_icon.svg" alt="go back">
+    </a>
+    <h2>Report of {{ report.inspection.property.name }}</h2>
+  </div>
 
-  <button type="button" onclick="">share</button>
-  <button type="button" onclick="">download</button>
+  <div class="viewing-detail-container">
+    <div class="description-container">
+      <h3><span>for</span> {{ report.inspection.tenant }}</h3>
+      <h3><span>inspection on</span> {{ report.inspection.time }}</h3>
+    </div>
 
+    <div class="button-container">
+      <button type="button" id="share" onclick="">share</button>
+      <button type="button" id="download" onclick="">download</button>
+    </div>
+  </div>
+  
   <div class="pdf-container">
     <div *ngIf="isLoaded" style="text-align: center;">
       <button (click)="prevPage()" [disabled]="page === 1">Prev</button>
       <span>{{ page }} / {{ totalPages }}</span>
       <button (click)="nextPage()" [disabled]="page === totalPages">Next</button>
     </div>
-    <pdf-viewer [src]="pdfSrc" 
-                [show-all]="false"
-                [page]="page"
-                (after-load-complete)="afterLoadComplete($event)"
+    <pdf-viewer 
+    [src]="pdfSrc" 
+    [show-all]="false"
+    [page]="page"
+    (after-load-complete)="afterLoadComplete($event)"
     ></pdf-viewer>
   </div>
 </div>  

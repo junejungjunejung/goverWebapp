@@ -1,0 +1,131 @@
+@import 'src/variables';
+
+.sidebar{
+  background-color: $nav-bgc;
+  height: 100%;
+  min-width: 4rem;
+}
+
+ul{
+  margin-bottom: 10rem;
+}
+
+a{
+  display:inline;
+  text-decoration: none;
+  color: $font-main-color;
+}
+
+li.nav-item{
+  border-bottom: 1px solid $nav-border;
+}
+
+li.nav-item:last-child{
+  border: none;
+  border-left: .5rem solid $nav-bgc;
+}
+
+.logout-container{
+  border-top: 1px solid $nav-border;
+}
+
+nav li{
+  border-left: .5rem solid $nav-bgc;
+}
+
+nav li:hover{
+  background-color: $nav-bgc-hover;
+  border-left: .5rem solid $nav-accent;
+}
+
+.logout{
+  color: $font-color1;
+}
+
+.logo-container{
+  padding: 2rem 1rem;
+}
+
+.nav-item{
+  padding: 1rem;
+}
+
+.nav-link{
+  padding:0;
+}
+
+.logo-container .web-logo {
+  display: none;
+}
+
+.logo-container .mobile-logo {
+  display: block;
+}
+
+.nav-item img{
+  display:block;
+  margin: auto;
+}
+
+.nav-item span{
+  display: none;
+}
+
+.nav-link span{
+  padding-left: .5rem;
+}
+
+.profile-container{
+  margin: 0;
+  padding: 0;
+  border-left: .5rem solid $nav-bgc;
+}
+
+.profile span{
+  display: none;
+}
+
+.logout-container{
+  padding: 1rem;
+  border-left: .5rem solid $nav-bgc;
+}
+
+.logout span{
+  display: none;
+}
+
+// Media Query
+
+@media screen and (min-width: 700px) {
+  .sidebar{
+    min-width: 220px;
+  }
+  
+  .logo-container .mobile-logo {
+    display: none;
+  }
+  .logo-container .web-logo {
+    display: block;
+    max-width: 215px;
+  }
+
+  span{
+    font-size: 24px;
+  }
+
+  .nav-item img{
+    display: inline;
+  }
+
+  .nav-item span{
+    display: inline;
+  }
+  
+  .profile span{
+    display: inline;
+  }
+
+  .logout span{
+    display: inline;
+  }
+}
