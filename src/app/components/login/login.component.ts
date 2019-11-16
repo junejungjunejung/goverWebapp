@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { UserService } from '../../services/user.service';
+import { UserService, AuthResponseData } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +9,8 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  error: string = null;
 
   constructor(private userService: UserService) { }
   
@@ -18,25 +20,21 @@ export class LoginComponent {
       return;
       // if form is not valid, stop the execution
     }
-    // const email = form.value.email;
-    // const password = form.value.password;
+    const email = form.value.email;
+    const password = form.value.password;
 
-    // let authObs: Observable<AuthResponseData>;    
-    // authObs = this.userService.login(email, password);
+    let authObs: Observable<AuthResponseData>;    
+    authObs = this.userService.login(email, password);
 
-    // authObs.subscribe(
-    //   resData => {
-    //     // console.log(resData);
-    //     this.isLoading = false;
-    //     this.router.navigate(['']);
-    //   },
-    //   errorMessage => {
-    //     console.log(errorMessage);
-    //     this.error = errorMessage;
-    //     this.isLoading = false;
-    //   }
-    // );
+    authObs.subscribe(
+      resData => {
+        console.log(resData);
+      },
+      errorMessage => {
+        this.error = errorMessage;
+      }
+    );
 
-    // form.reset();
+    form.reset();
   }
 }
