@@ -9,6 +9,16 @@ export interface AuthResponseData {
   refresh: string;
 }
 
+export interface UserResponseData {
+  picture: string;
+  id: number;
+  username: string;
+  last_name: string;
+  bio: string;
+  email: string;
+  first_name: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,10 +26,15 @@ export interface AuthResponseData {
 export class UserService {
   user: User;
 
+  //Subject object which will notify the changes in the user object
+  userSubject = new Subject<User>();
+
   constructor(private http: HttpClient) { 
     this.user = 
       {
-        name: 'Deninho'
+        name: 'Deninho',
+        accessToken: '',
+        refreshToken:'',
       }
   }
 
@@ -43,6 +58,23 @@ export class UserService {
       );
   }
 
+  getUserInfo(email: string) {
+    return this.http
+    .get<UserResponseData>(
+      'https://greenfillproject.com/api/users/get_by_username/?username='+ email
+    )
+    .pipe(
+      catchError(this.handleError),
+      tap(userRes => {
+        this.userAuthentication(
+          userRes.first_name,
+          userRes.last_name
+        )
+
+      })
+    );
+  }
+
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
 
@@ -57,9 +89,22 @@ export class UserService {
   private handleAuthentication(
     access: string,
     refresh: string
-
   ) {
-    this.user.name = access;
+    this.user.accessToken = access;
+    this.user.refreshToken = refresh;
+  }
+
+  private userAuthentication(
+    first_name: string,
+    last_name: string
+  ){
+    this.user.name = first_name +' '+ last_name;
+
+    const user = new User();
+    user.accessToken = this.user.accessToken;
+    user.refreshToken = this.user.refreshToken;
+    user.name = this.user.name;
+    this.userSubject.next(user);
   }
 
   getUser(): User {

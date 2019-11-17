@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { UserService, AuthResponseData } from '../../services/user.service';
+import { UserService, AuthResponseData, UserResponseData } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +29,16 @@ export class LoginComponent {
     authObs.subscribe(
       resData => {
         console.log(resData);
+        let userObs: Observable<UserResponseData>;  
+        userObs = this.userService.getUserInfo(email);
+        userObs.subscribe(
+          userRes => {
+            console.log(userRes);
+          },
+          errorMessage => {
+            this.error = errorMessage;
+          }
+        )
       },
       errorMessage => {
         this.error = errorMessage;
