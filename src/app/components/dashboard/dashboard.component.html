@@ -28,8 +28,8 @@
     </div>
 
     <div class="reports-container list-item">
-      <h2>{{ reports.length }} reports</h2>
-      <div class="list-card" *ngFor="let report of reports">
+      <h2 routerLink="/reports">{{ reports.length }} reports</h2>
+      <div class="list-card" *ngFor="let report of reports" routerLink="/reports-viewing/{{report.id}}">
         <img [src]="report.inspection.property.image" alt="">
         <div class="info-container">
           <h3>Report of {{ report.inspection.property.name }}</h3>
