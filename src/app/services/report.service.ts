@@ -29,6 +29,42 @@ export class ReportService {
       { id: 3,
         inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
         '../../assets/Isengard.jpg')
+      },
+      { id: 4,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 5,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 6,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 7,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 8,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 9,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 10,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 11,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
+      },
+      { id: 12,
+        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
+        '../../assets/Isengard.jpg')
       }
     ]
   }

@@ -24,6 +24,51 @@ export class PropertyService {
         name: 'Isengard',
         address: 'North of the White Mountains and west of Anórien',
         image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
+      },
+      {
+        name: 'Isengard',
+        address: 'North of the White Mountains and west of Anórien',
+        image: '../../assets/Isengard.jpg'
       }
     ]
    }
