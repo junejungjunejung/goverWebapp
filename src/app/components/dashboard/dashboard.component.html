@@ -1,5 +1,5 @@
 <div class="dashboard p-2">
-  <h1 class="user-greeting greeting-mobile">Welcome,<br/>  
+  <h1 class="user-greeting greeting-mobile">Welcome,<br/>
     {{ user.name }}</h1>
   <h1 class="user-greeting greeting-web">Welcome, {{ user.name }}</h1>
 
@@ -29,8 +29,8 @@
 
     <div class="reports-container list-item">
       <h2 routerLink="/reports">{{ reports.length }} reports</h2>
-      <div class="list-card" *ngFor="let report of reports | slice:0:6; let i=index" routerLink="/reports-viewing/{{report.id}}">
-        <img [src]="report.inspection.property.image" alt="">
+      <div class="list-card" *ngFor="let report of reports | slice:0:6; let i=index">
+        <img [src]="report.inspection.property.image" alt="" routerLink="/reports-viewing/{{report.id}}">
         <div class="info-container">
           <h3>Report of {{ report.inspection.property.name }}</h3>
           <p><span>for</span> {{ report.inspection.tenant }}</p>
@@ -38,6 +38,6 @@
         </div>
       </div>
     </div>
-  
-  </div>  
+
+  </div>
 </div>

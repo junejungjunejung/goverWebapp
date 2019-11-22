@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Report } from '../../models/Report';
 
@@ -11,14 +12,28 @@ import { ReportService } from '../../services/report.service';
 })
 export class ReportsComponent implements OnInit {
 
-  reports: Report[];
+  reports: Report[] = [];
 
   constructor(
     private reportService: ReportService
   ) { }
 
   ngOnInit() {
-    this.reports = this.reportService.getReports();
+    this.loadReports();
+  }
+
+  private loadReports() {
+    let reportObs: Observable<Report[]>;
+    reportObs = this.reportService.getReports();
+
+    reportObs.subscribe(
+      resData => {
+        this.reports = resData;
+      },
+      errorMessage => {
+        console.log(errorMessage);
+      }
+    );
   }
 
 }
