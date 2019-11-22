@@ -7,87 +7,69 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { throwError, Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-
 @Injectable({ providedIn: 'root' })
 export class ReportService {
   reports: Report[];
 
   constructor(private http: HttpClient) {
-
-    this.reports = [
-      { id: 1,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 2,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 3,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 4,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 5,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 6,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 7,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 8,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 9,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 10,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 11,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      },
-      { id: 12,
-        inspection: new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg')
-      }
-    ]
+    this.getReports();
   }
 
-  getReports(): Report[]{
-    return this.reports;
+  getReports() {
+    return this.http
+      .get<[]>(
+        'https://greenfillproject.com/api/report/'
+      )
+      .pipe(
+        catchError(this.handleError),
+        tap(reportsResponseData => console.log(reportsResponseData)),
+        map(reportsResponseData => {
+          const reportsArray: Report[] = [];
+          // tslint:disable-next-line: forin
+          for (const key in reportsResponseData) {
+            const propertyAddress = reportsResponseData[key]['inspection_obj']['inspected_property']['address'];
+            const propertyThumbnail = reportsResponseData[key]['inspection_obj']['inspected_property']['thumbnail'];
+            const inspectionDate = reportsResponseData[key]['inspection_obj']['inspection_date'];
+            const tenantName = reportsResponseData[key]['inspection_obj']['tenant_name'];
+
+            const property = new Property(propertyAddress, propertyAddress, propertyThumbnail);
+            const inspection = new Inspection(inspectionDate, 'Signed', property, tenantName, propertyThumbnail);
+            const report = new Report();
+            report.id = reportsResponseData[key]['id'];
+            report.inspection = inspection;
+            reportsArray.push(report);
+          }
+          this.reports = reportsArray;
+          return reportsArray;
+        })
+      );
   }
 
-  
   fetchReport(reportId: number) {
 
     return this.http
       .get<Report>(
-        'https://api.greenfill.wmdd.ca/company/' + reportId
+        'https://greenfillproject.com/api/report/' + reportId
       )
       .pipe(
         catchError(this.handleError),
-        map(responseData => {
-          let report = new Report();
-          report.id  = 2;
-          let inspection = new Inspection('Oct 31st -07:00pm','Signed',new Property('Isengard','North of the White Mountains and west of Anórien','../../assets/Isengard.jpg'),'Saruman',
-        '../../assets/Isengard.jpg');
+        tap(reportResponseData => console.log(reportResponseData)),
+        map(reportResponseData => {
+          const report = new Report();
+          const propertyAddress = reportResponseData['inspection_obj']['inspected_property']['address'];
+          const propertyThumbnail = reportResponseData['inspection_obj']['inspected_property']['thumbnail'];
+          const inspectionDate = reportResponseData['inspection_obj']['inspection_date'];
+          const tenantName = reportResponseData['inspection_obj']['tenant_name'];
+          const reportFile = reportResponseData['report_file']
+
+          const property = new Property(propertyAddress, propertyAddress, propertyThumbnail);
+          const inspection = new Inspection(inspectionDate, 'Signed', property, tenantName, propertyThumbnail);
+          report.id = reportResponseData['id'];
           report.inspection = inspection;
+          if (reportFile) {
+            report.reportFile = reportFile.replace("http:", "https:");
+          }
+
           return report;
         })
       );
