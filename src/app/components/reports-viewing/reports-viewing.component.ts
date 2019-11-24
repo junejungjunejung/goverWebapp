@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class ReportsViewingComponent implements OnInit {
 
-  pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  //pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
+  pdfSrc = "";
   page: number = 1;
   totalPages: number;
   isLoaded: boolean = false;
