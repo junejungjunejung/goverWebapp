@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { Property } from '../../models/Property';
 import { Inspection } from '../../models/Inspection';
 import { Report } from '../../models/Report';
@@ -15,14 +17,12 @@ import { UserService} from '../../services/user.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  
+
   user: User;
-  
-  properties: Property[];
 
-  inspections: Inspection[];
-
-  reports: Report[];
+  reports: Report[] = [];
+  inspections: Inspection[] = [];
+  properties: Property[] = [];
 
   constructor(
     private userService: UserService,
@@ -33,9 +33,50 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.getUser();
-    this.properties = this.propertyService.getProperties();
-    this.inspections = this.inspectionService.getInspections();
-    this.reports = this.reportService.getReports();
+    this.loadReports();
+    this.loadInspections();
+    this.loadProperties();
   }
 
+  private loadReports() {
+    let reportObs: Observable<Report[]>;
+    reportObs = this.reportService.getReports();
+
+    reportObs.subscribe(
+      resData => {
+        this.reports = resData;
+      },
+      errorMessage => {
+        console.log(errorMessage);
+      }
+    );
+  }
+
+  private loadInspections() {
+    let inspectionObs: Observable<Inspection[]>;
+    inspectionObs = this.inspectionService.getInspections();
+
+    inspectionObs.subscribe(
+      resData => {
+        this.inspections = resData;
+      },
+      errorMessage => {
+        console.log(errorMessage);
+      }
+    );
+  }
+
+  private loadProperties() {
+    let propertyObs: Observable<Property[]>;
+    propertyObs = this.propertyService.getProperties();
+
+    propertyObs.subscribe(
+      resData => {
+        this.properties = resData;
+      },
+      errorMessage => {
+        console.log(errorMessage);
+      }
+    );
+  }
 }

@@ -1,43 +1,52 @@
 <div class="dashboard p-2">
-  <h1 class="user-greeting greeting-mobile">Welcome,<br/>  
+  <h1 class="user-greeting greeting-mobile">Welcome,<br/>
     {{ user.name }}</h1>
   <h1 class="user-greeting greeting-web">Welcome, {{ user.name }}</h1>
 
   <div class="lists-container">
     <div class="properties-container list-item">
       <h2>{{ properties.length }} properties</h2>
-      <div class="list-card" *ngFor="let property of properties">
-        <img [src]="property.image" alt="">
-        <div class="info-container">
-          <h3>{{ property.name }}</h3>
-          <p>{{ property.address }}</p>
+      <div class="list-card-container">
+        <div class="list-card" *ngFor="let property of properties | slice:0:3; let i=index">
+          <img [src]="property.image" alt="">
+          <div class="info-container">
+            <h3>{{ property.name }}</h3>
+            <p>{{ property.address }}</p>
+          </div>
         </div>
       </div>
+      <p class="see-all">See All</p>
     </div>
 
     <div class="inspections-container list-item">
       <h2>{{ inspections.length }} inspections</h2>
-      <div class="list-card" *ngFor="let inspection of inspections">
-        <img [src]="inspection.image" alt="">
-        <div class="info-container">
-          <h3>Inspection of {{ inspection.property.name }}</h3>
-          <p><span>for</span> {{ inspection.tenant }}</p>
-          <p><span>on</span> {{ inspection.time }}</p>
+      <div class="list-card-container">
+        <div class="list-card" *ngFor="let inspection of inspections | slice:0:4; let i=index">
+          <img [src]="inspection.image" alt="">
+          <div class="info-container">
+            <h3>Inspection of {{ inspection.property.name }}</h3>
+            <p><span>for</span> {{ inspection.tenant }}</p>
+            <p><span>on</span> {{ inspection.time }}</p>
+          </div>
         </div>
       </div>
+      <p class="see-all">See All</p>
     </div>
 
     <div class="reports-container list-item">
-      <h2>{{ reports.length }} reports</h2>
-      <div class="list-card" *ngFor="let report of reports">
-        <img [src]="report.inspection.property.image" alt="">
-        <div class="info-container">
-          <h3>Report of {{ report.inspection.property.name }}</h3>
-          <p><span>for</span> {{ report.inspection.tenant }}</p>
-          <p><span>on</span> {{ report.inspection.time }}</p>
+      <h2 routerLink="/reports">{{ reports.length }} reports</h2>
+      <div class="list-card-container">
+        <div class="list-card" *ngFor="let report of reports | slice:0:6; let i=index" routerLink="/reports-viewing/{{report.id}}">
+          <img [src]="report.inspection.property.image" alt="">
+          <div class="info-container">
+            <h3>Report of {{ report.inspection.property.name }}</h3>
+            <p><span>for</span> {{ report.inspection.tenant }}</p>
+            <p><span>on</span> {{ report.inspection.time }}</p>
+          </div>
         </div>
       </div>
+      <p class="see-all" routerLink="/reports">See All</p>
     </div>
-  
-  </div>  
+
+  </div>
 </div>

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./reports-viewing.component.scss']
 })
 export class ReportsViewingComponent implements OnInit {
-  
+
   pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
   page: number = 1;
   totalPages: number;
@@ -38,11 +38,11 @@ export class ReportsViewingComponent implements OnInit {
     }
   }
 
-  report: Report;
-  
-  loadReport(reportId){
+  report = new Report();
 
-    console.log("loadReport");
+  private loadReport(reportId) {
+
+    //console.log("loadReport");
     let reportObs: Observable<Report>;
     reportObs = this.reportService.fetchReport(reportId);
 
@@ -50,9 +50,14 @@ export class ReportsViewingComponent implements OnInit {
       resData => {
         console.log(resData);
         this.report = resData;
+        if (this.report.reportFile) {
+          if (this.report.reportFile.replace) {
+            this.pdfSrc = this.report.reportFile.replace("http:","https:");
+          }
+        }
       },
       errorMsg => {
-        console.log(errorMsg);
+        //console.log(errorMsg);
       }
     )
   }

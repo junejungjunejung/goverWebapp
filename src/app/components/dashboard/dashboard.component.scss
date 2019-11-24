@@ -20,6 +20,16 @@ h2{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%
+}
+
+.list-card-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.reports-container .list-card{
+  display: flex;
 }
 
 .list-item{
@@ -35,6 +45,7 @@ h2{
   border-radius: 10px;
   margin-bottom: 1.5rem;
   border: 1px solid $card-border;
+  flex-grow: 1;
 }
 
 .list-card:hover{
@@ -50,8 +61,25 @@ h2{
 }
 
 img{
-  height: 50px;
   border-radius: 10px 10px 0 0;
+}
+
+.properties-container img{
+  width: 350px;
+  max-height: 140px;
+  object-fit: fill;
+}
+
+.inspections-container img{
+  width: 350px;
+  max-height: 95px;
+  object-fit: fill;
+}
+
+.reports-container img{
+  border-radius: 10px 0 0 10px;
+  max-width: 95px;
+  object-fit: cover;
 }
 
 .user-greeting{
@@ -60,6 +88,10 @@ img{
 
 .dashboard h2{
   color: $font-color3;
+}
+
+.dashboard h2:hover{
+  color: $font-main-color;
 }
 
 .dashboard h3{
@@ -91,5 +123,10 @@ span{
   
   .list-item{
     margin-right: 1rem;
+    max-width: 350px;
+  }
+  
+  .reports-container.list-item{
+    margin-right: 0;
   }
 }

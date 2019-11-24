@@ -14,21 +14,25 @@
 
     <div class="button-container">
       <button type="button" id="share" onclick="">share</button>
-      <button type="button" id="download" onclick="">download</button>
+      <a href="{{ report.reportFile }}" target="_blank">
+        <button type="button" id="download" onclick="">download</button>
+      </a>
     </div>
   </div>
-  
+
   <div class="pdf-container">
     <div *ngIf="isLoaded" style="text-align: center;">
       <button (click)="prevPage()" [disabled]="page === 1">Prev</button>
       <span>{{ page }} / {{ totalPages }}</span>
       <button (click)="nextPage()" [disabled]="page === totalPages">Next</button>
     </div>
-    <pdf-viewer 
-    [src]="pdfSrc" 
+    <pdf-viewer
+    [src]="pdfSrc"
     [show-all]="false"
     [page]="page"
     (after-load-complete)="afterLoadComplete($event)"
+    [original-size]="true"
+    [fit-to-page]="true"
     ></pdf-viewer>
   </div>
-</div>  
+</div>
