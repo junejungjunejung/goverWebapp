@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let report of reports" routerLink="/reports-viewing/{{report.id}}">
+      <tr *ngFor="let report of getReports" routerLink="/reports-viewing/{{report.id}}">
         <td class="property">{{ report.inspection.property.name }}</td>
         <td class="time">{{ report.inspection.time }}</td>
         <td class="tenent">{{ report.inspection.tenant }}</td>
@@ -29,10 +29,10 @@
     <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
     </ngb-pagination>
   
-    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <!-- <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
       <option [ngValue]="2">2 items per page</option>
       <option [ngValue]="4">4 items per page</option>
       <option [ngValue]="6">6 items per page</option>
-    </select>
+    </select> -->
   </div>
 </div>

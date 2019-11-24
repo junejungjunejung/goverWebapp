@@ -16,13 +16,7 @@ export class ReportsComponent  {
 
   page = 1;
   pageSize = 4;
-  collectionSize = this.reports.length;
-
-  // get getReports(): Report[] {
-  //   return this.reports
-  //     .map((report, i) => ({id: i + 1, ...report}))
-  //     .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
-  // }
+  collectionSize = 0;
 
   constructor(
     private reportService: ReportService
@@ -39,11 +33,18 @@ export class ReportsComponent  {
     reportObs.subscribe(
       resData => {
         this.reports = resData;
+        this.collectionSize = this.reports.length;
       },
       errorMessage => {
         console.log(errorMessage);
       }
     );
+  }
+
+  get getReports(): Report[] {
+    return this.reports
+      .map((report, i) => ({id: i + 1, ...report}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
 }
