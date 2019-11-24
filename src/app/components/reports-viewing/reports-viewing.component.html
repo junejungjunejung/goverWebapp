@@ -20,7 +20,12 @@
     </div>
   </div>
 
-  <div class="pdf-container">
+  <div>
+    <object [appReportpdf]='pdfSrc' type="application/pdf" width="900" height="800">
+    </object>
+  </div>
+
+  <!-- <div class="pdf-container">
     <div *ngIf="isLoaded" style="text-align: center;">
       <button (click)="prevPage()" [disabled]="page === 1">Prev</button>
       <span>{{ page }} / {{ totalPages }}</span>
@@ -34,5 +39,6 @@
     [original-size]="true"
     [fit-to-page]="true"
     ></pdf-viewer>
-  </div>
+  </div> -->
+
 </div>
