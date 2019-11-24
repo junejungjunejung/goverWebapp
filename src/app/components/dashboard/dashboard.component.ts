@@ -20,11 +20,9 @@ export class DashboardComponent implements OnInit {
 
   user: User;
 
-  properties: Property[];
-
-  inspections: Inspection[];
-
   reports: Report[] = [];
+  inspections: Inspection[] = [];
+  properties: Property[] = [];
 
   constructor(
     private userService: UserService,
@@ -35,9 +33,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.getUser();
-    this.properties = this.propertyService.getProperties();
-    this.inspections = this.inspectionService.getInspections();
     this.loadReports();
+    this.loadInspections();
+    this.loadProperties();
   }
 
   private loadReports() {
@@ -54,4 +52,31 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  private loadInspections() {
+    let inspectionObs: Observable<Inspection[]>;
+    inspectionObs = this.inspectionService.getInspections();
+
+    inspectionObs.subscribe(
+      resData => {
+        this.inspections = resData;
+      },
+      errorMessage => {
+        console.log(errorMessage);
+      }
+    );
+  }
+
+  private loadProperties() {
+    let propertyObs: Observable<Property[]>;
+    propertyObs = this.propertyService.getProperties();
+
+    propertyObs.subscribe(
+      resData => {
+        this.properties = resData;
+      },
+      errorMessage => {
+        console.log(errorMessage);
+      }
+    );
+  }
 }
