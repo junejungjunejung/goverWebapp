@@ -1,1 +1,32 @@
-<p>properties works!</p>
+<div class="properties-container">
+  <div class="header-container">
+    <a class="" routerLink="/">
+      <img src="../../assets/arrow_icon.svg" alt="go back">
+    </a>
+    <h2>Properties</h2>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Property Name</th>
+        <th>Property Address</th>
+        <!-- <th>Owner</th>
+        <th>Contact</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let property of properties">
+        <td class="name">{{ property.name }}</td>
+        <td class="address">{{ property.address }}</td>
+        <!-- <td class="owner">{{ report.inspection.tenant }}</td>
+        <td class="contact">{{ report.inspection.status }}</td> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-end p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  </div>
+</div>
