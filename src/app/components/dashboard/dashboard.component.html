@@ -5,7 +5,7 @@
 
   <div class="lists-container">
     <div class="properties-container list-item">
-      <h2>{{ properties.length }} properties</h2>
+      <h2 routerLink="/properties">{{ properties.length }} properties</h2>
       <div class="list-card-container">
         <div class="list-card" *ngFor="let property of properties | slice:0:3; let i=index">
           <img [src]="property.image" alt="">
@@ -15,11 +15,11 @@
           </div>
         </div>
       </div>
-      <p class="see-all">See All</p>
+      <p class="see-all" routerLink="/properties">See All</p>
     </div>
 
     <div class="inspections-container list-item">
-      <h2>{{ inspections.length }} inspections</h2>
+      <h2 routerLink="/inspections">{{ inspections.length }} inspections</h2>
       <div class="list-card-container">
         <div class="list-card" *ngFor="let inspection of inspections | slice:0:4; let i=index">
           <img [src]="inspection.image" alt="">
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <p class="see-all">See All</p>
+      <p class="see-all" routerLink="/inspections">See All</p>
     </div>
 
     <div class="reports-container list-item">

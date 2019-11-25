@@ -71,6 +71,10 @@ nav li:hover{
   display: none;
 }
 
+.nav-link img{
+  padding-bottom: .5rem;
+}
+
 .nav-link span{
   padding-left: .5rem;
 }
@@ -79,6 +83,11 @@ nav li:hover{
   margin: 0;
   padding: 0;
   border-left: .5rem solid $nav-bgc;
+}
+
+.profile img{
+  max-width: 60px;
+  padding-bottom: .5rem;
 }
 
 .profile span{
@@ -124,5 +133,6 @@ nav li:hover{
 
   .logout span{
     display: inline;
+    padding-right: .5rem;
   }
 }

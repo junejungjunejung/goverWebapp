@@ -1,1 +1,32 @@
-<p>inspections works!</p>
+<div class="inspections-container">
+  <div class="header-container">
+    <a class="" routerLink="/">
+      <img src="../../assets/arrow_icon.svg" alt="go back">
+    </a>
+    <h2>Inspections</h2>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Inspection Time</th>
+        <th>Inspection Status</th>
+        <th>Property Name</th>
+        <th>Tenant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inspection of inspections">
+        <td class="time">{{ inspection.time }}</td>
+        <td class="status">{{ inspection.status }}</td>
+        <td class="property">{{ inspection.property.name }}</td>
+        <td class="tenant">{{ inspection.tenant }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-end p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  </div>
+</div>

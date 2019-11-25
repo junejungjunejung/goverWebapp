@@ -15,7 +15,7 @@ export class ReportsComponent  {
   reports: Report[] = [];
 
   page = 1;
-  pageSize = 4;
+  pageSize = 7;
   collectionSize = 0;
 
   constructor(
