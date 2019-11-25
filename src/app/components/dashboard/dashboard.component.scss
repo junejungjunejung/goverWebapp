@@ -43,7 +43,7 @@ h2{
 .list-card{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 10px;
-  margin-bottom: 1.5rem;
+  margin-bottom: .5rem;
   border: 1px solid $card-border;
   flex-grow: 1;
 }
@@ -66,19 +66,19 @@ img{
 
 .properties-container img{
   width: 350px;
-  max-height: 140px;
+  max-height: 145px;
   object-fit: fill;
 }
 
 .inspections-container img{
   width: 350px;
-  max-height: 95px;
+  max-height: 75px;
   object-fit: fill;
 }
 
 .reports-container img{
   border-radius: 10px 0 0 10px;
-  max-width: 95px;
+  max-width: 90px;
   object-fit: cover;
 }
 
@@ -96,6 +96,7 @@ img{
 
 .dashboard h3{
   color:$font-color2;
+  margin-bottom: 0;
 }
 
 p{
@@ -104,6 +105,18 @@ p{
 
 span{
   color: $font-color4;
+}
+
+.see-all{
+  color: $font-color3;
+  text-align: end;
+  text-decoration: underline;
+  font-weight: bold;
+  padding-right:.5rem;
+}
+
+.see-all:hover{
+  color: $font-main-color;
 }
 
 @media screen and (min-width: 700px) {
