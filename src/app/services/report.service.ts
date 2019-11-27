@@ -27,17 +27,19 @@ export class ReportService {
           const reportsArray: Report[] = [];
           // tslint:disable-next-line: forin
           for (const key in reportsResponseData) {
-            const propertyAddress = reportsResponseData[key]['inspection_obj']['inspected_property']['address'];
-            const propertyThumbnail = reportsResponseData[key]['inspection_obj']['inspected_property']['thumbnail'];
-            const inspectionDate = reportsResponseData[key]['inspection_obj']['inspection_date'];
-            const tenantName = reportsResponseData[key]['inspection_obj']['tenant_name'];
+            if (reportsResponseData[key]['inspection_obj']) {
+              const propertyAddress = reportsResponseData[key]['inspection_obj']['inspected_property']['address'];
+              const propertyThumbnail = reportsResponseData[key]['inspection_obj']['inspected_property']['thumbnail'];
+              const inspectionDate = reportsResponseData[key]['inspection_obj']['inspection_date'];
+              const tenantName = reportsResponseData[key]['inspection_obj']['tenant_name'];
 
-            const property = new Property(propertyAddress, propertyAddress, propertyThumbnail);
-            const inspection = new Inspection(inspectionDate, 'Signed', property, tenantName, propertyThumbnail);
-            const report = new Report();
-            report.id = reportsResponseData[key]['id'];
-            report.inspection = inspection;
-            reportsArray.push(report);
+              const property = new Property(propertyAddress, propertyAddress, propertyThumbnail);
+              const inspection = new Inspection(inspectionDate, 'Signed', property, tenantName, propertyThumbnail);
+              const report = new Report();
+              report.id = reportsResponseData[key]['id'];
+              report.inspection = inspection;
+              reportsArray.push(report);
+            }
           }
           this.reports = reportsArray;
           return reportsArray;
