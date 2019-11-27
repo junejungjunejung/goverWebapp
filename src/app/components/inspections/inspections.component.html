@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let inspection of inspections">
+      <tr *ngFor="let inspection of getInspections">
         <td class="time">{{ inspection.time }}</td>
         <td class="status">{{ inspection.status }}</td>
         <td class="property">{{ inspection.property.name }}</td>
