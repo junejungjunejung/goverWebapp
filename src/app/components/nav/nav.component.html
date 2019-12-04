@@ -1,18 +1,19 @@
 <nav class="sidebar">
-  <div class="sidebar-sticky">
+  <div class="sidebar-sticky" style="height: 100%;display: flex; flex-direction: column; justify-content: space-between;">
+    <span>
     <div class="logo-container">
-      <div class="web-logo"> 
+      <div class="web-logo">
         <a routerLink="/" class="web-logo d-flex justify-content-between align-items-center" href="#">
           <img src="../../assets/web_logo.svg" alt="Gover">
         </a>
       </div>
-      <div class="mobile-logo"> 
+      <div class="mobile-logo">
         <a class="mobile-logo d-flex justify-content-between align-items-center" routerLink="/">
           <img src="../../assets/mob_logo.svg" alt="mobile logo">
         </a>
       </div>
     </div>
-    
+
     <ul class="nav flex-column">
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/">
@@ -39,7 +40,9 @@
         </a>
       </li>
     </ul>
+    </span>
 
+    <span>
     <div class="profile-container">
       <a class="profile" routerLink="/profile">
         <img src="../../assets/user_icon.svg" alt="Profile">
@@ -47,12 +50,13 @@
       </a>
     </div>
 
-    <div class="logout-container">  
+    <div class="logout-container">
       <a class="logout" routerLink="">
           <span>logout</span>
           <img src="../../assets/logout_icon.svg" alt="">
       </a>
     </div>
-    
+    </span>
+
   </div>
 </nav>

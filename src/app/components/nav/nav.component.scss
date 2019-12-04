@@ -6,10 +6,6 @@
   min-width: 4rem;
 }
 
-ul{
-  margin-bottom: 10rem;
-}
-
 a{
   display:inline;
   text-decoration: none;
@@ -106,7 +102,7 @@ nav li:hover{
 // Media Query
 
 @media screen and (min-width: 700px) {
-  
+
   .logo-container .mobile-logo {
     display: none;
   }
@@ -126,7 +122,7 @@ nav li:hover{
   .nav-item span{
     display: inline;
   }
-  
+
   .profile span{
     display: inline;
   }
