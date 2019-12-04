@@ -28,6 +28,8 @@ h2{
   flex-direction: column;
 }
 
+.properties-container .list-card,
+.inspections-container .list-card,
 .reports-container .list-card{
   display: flex;
 }
@@ -64,18 +66,8 @@ img{
   border-radius: 10px 10px 0 0;
 }
 
-.properties-container img{
-  width: 350px;
-  max-height: 145px;
-  object-fit: fill;
-}
-
-.inspections-container img{
-  width: 350px;
-  max-height: 75px;
-  object-fit: fill;
-}
-
+.properties-container img,
+.inspections-container img,
 .reports-container img{
   border-radius: 10px 0 0 10px;
   max-width: 90px;
@@ -128,17 +120,17 @@ span{
   .greeting-mobile{
     display: none;
   }
-  
+
   .lists-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
+
   .list-item{
     margin-right: 1rem;
     max-width: 350px;
   }
-  
+
   .reports-container.list-item{
     margin-right: 0;
   }

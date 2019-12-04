@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class ReportsViewingComponent implements OnInit {
 
   pdfSrc = "";
-  
+
   constructor(private reportService: ReportService, private router: ActivatedRoute
   ) { }
 
@@ -32,7 +32,7 @@ export class ReportsViewingComponent implements OnInit {
 
     reportObs.subscribe(
       resData => {
-        console.log(resData);
+        //console.log(resData);
         this.report = resData;
         if (this.report.reportFile) {
           if (this.report.reportFile.replace) {

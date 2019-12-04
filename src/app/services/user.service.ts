@@ -29,10 +29,10 @@ export class UserService {
   //Subject object which will notify the changes in the user object
   userSubject = new Subject<User>();
 
-  constructor(private http: HttpClient) { 
-    this.user = 
+  constructor(private http: HttpClient) {
+    this.user =
       {
-        name: 'Deninho',
+        name: 'André Falco',
         accessToken: '',
         refreshToken:'',
       }

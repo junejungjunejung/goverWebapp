@@ -10,7 +10,7 @@ export class ReportpdfDirective {
   constructor(private el: ElementRef) {
     //el.nativeElement.data = 'https://greenfillproject.com/media/reports/report_21.pdf';
     //el.nativeElement.data = this.pdfsource;
-     console.log(this.pdfsource);
+     //console.log(this.pdfsource);
   }
 
   ngOnChanges(changes) {
